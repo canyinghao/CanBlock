@@ -437,6 +437,7 @@ public class ViewPagerTestActivity extends CanBlockActivity {
 
 ### 开发者
 
+![](https://avatars3.githubusercontent.com/u/12572840?v=3&s=460) 
 
 canyinghao: <canyinghao@hotmail.com>  
 
