@@ -189,5 +189,15 @@ public abstract class CanBlock implements CanBlockLife {
         return null;
     }
 
+    public CanBlockActivity getCanBlockActivity() {
+
+        if (context != null && context instanceof CanBlockActivity) {
+
+            return (CanBlockActivity) context;
+
+        }
+        return null;
+    }
+
 
 }

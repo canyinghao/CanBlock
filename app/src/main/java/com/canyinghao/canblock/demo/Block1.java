@@ -10,16 +10,15 @@ import com.canyinghao.canblock.CanBlock;
 public class Block1 extends CanBlock {
 
 
-
-
     @Override
     public void initView() {
-        setContentView(R.layout.block_1);
 
 
-      TextView tv = (TextView) findViewById(R.id.tv_block);
 
-        tv.setText("Block1");
+        TextView tv_title = (TextView) findViewById(R.id.tv_title);
+
+        tv_title.setText("Block1");
+
 
     }
 

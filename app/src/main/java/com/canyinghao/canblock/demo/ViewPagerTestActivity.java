@@ -10,8 +10,8 @@ import com.canyinghao.canblock.CanBlockPagerAdapter;
 /**
  * Created by yangjian on 15/12/21.
  */
-public class ViewPagerTest extends CanBlockActivity {
-    CanRecyclerViewPager  viewPager;
+public class ViewPagerTestActivity extends CanBlockActivity {
+    CanRecyclerViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class ViewPagerTest extends CanBlockActivity {
 
         setContentView(R.layout.activity_viewpager);
 
-          viewPager = (CanRecyclerViewPager) findViewById(R.id.viewpager);
+        viewPager = (CanRecyclerViewPager) findViewById(R.id.viewpager);
 
 
         LinearLayoutManager layout = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,
@@ -27,12 +27,9 @@ public class ViewPagerTest extends CanBlockActivity {
         viewPager.setLayoutManager(layout);
 
 
+        CanBlockManager manager = getCanBlockManager().addPager(new BlockPager(1), this).addPager(new BlockPager(2), this).addPager(new BlockPager(3), this);
 
-
-
-        CanBlockManager manager =    getCanBlockManager().addPager(new Block1(),this).addPager(new Block2(),this).addPager(new Block1(),this);
-
-        CanBlockPagerAdapter adapter = new CanBlockPagerAdapter(viewPager,manager.getList());
+        CanBlockPagerAdapter adapter = new CanBlockPagerAdapter(viewPager, manager.getList());
 
 
         viewPager.setAdapter(adapter);
@@ -43,7 +40,6 @@ public class ViewPagerTest extends CanBlockActivity {
 
 
     }
-
 
 
 }

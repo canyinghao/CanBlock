@@ -1,8 +1,6 @@
 package com.canyinghao.canblock.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -20,25 +18,18 @@ public class MainActivity extends CanBlockActivity {
 
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.tv_main).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ViewPagerTest.class));
-            }
-        });
+
+        LinearLayout ll_main = (LinearLayout) findViewById(R.id.ll_main);
+
+        LinearLayout ll_block = (LinearLayout) findViewById(R.id.ll_block1);
+        View block2 = findViewById(R.id.block2);
+
+        getCanBlockManager().set(new Block1(), ll_block).replace(new Block2(), block2).add(new Block3(), ll_main);
 
 
-      LinearLayout  ll_block = (LinearLayout) findViewById(R.id.ll_block);
-      View block =   findViewById(R.id.block1);
 
-        getCanBlockManager().set(new Block3(),ll_block).add(new Block1(), ll_block).replace(new Block2(),block);
 
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Log.e("onActivityResult","onActivityResult");
-    }
 }

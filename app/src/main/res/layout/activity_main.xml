@@ -1,49 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-
-
-    <TextView
-        android:id="@+id/tv_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="mian"/>
-
-
     <LinearLayout
-
-        android:id="@+id/ll_block"
+        android:id="@+id/ll_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/tv"
+        <LinearLayout
+            android:id="@+id/ll_block1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="mian"/>
+            android:layout_marginLeft="@dimen/dimen_normal"
+            android:layout_marginRight="@dimen/dimen_normal"
+            android:layout_marginTop="@dimen/dimen_normal"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_normal_big">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_normal">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/app_hint"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/text_normal" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:drawablePadding="@dimen/dimen_normal"
+                android:text="@string/app_hint_long"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/text_small_little" />
+
+            <TextView
+                android:id="@+id/tv_notice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:text="@string/app_hint_long"
+                android:textColor="@color/black2"
+                android:textSize="@dimen/text_small_little" />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/block2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
 
-
-
-
-    <View
-        android:id="@+id/block1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-
-</LinearLayout>
+</ScrollView>

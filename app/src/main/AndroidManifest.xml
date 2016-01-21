@@ -15,7 +15,7 @@
         </activity>
 
 
-        <activity android:name=".ViewPagerTest" >
+        <activity android:name=".ViewPagerTestActivity" >
 
         </activity>
     </application>

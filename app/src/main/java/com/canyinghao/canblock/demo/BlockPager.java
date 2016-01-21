@@ -1,7 +1,5 @@
 package com.canyinghao.canblock.demo;
 
-import android.content.Intent;
-import android.view.View;
 import android.widget.TextView;
 
 import com.canyinghao.canblock.CanBlock;
@@ -9,9 +7,16 @@ import com.canyinghao.canblock.CanBlock;
 /**
  * Created by yangjian on 15/12/21.
  */
-public class Block3 extends CanBlock {
+public class BlockPager extends CanBlock {
 
     TextView tv_notice;
+
+    int page;
+
+    public BlockPager(int page) {
+        this.page = page;
+    }
+
     @Override
     public void initView() {
 
@@ -23,19 +28,14 @@ public class Block3 extends CanBlock {
 
          tv_notice = (TextView) findViewById(R.id.tv_notice);
 
-        tv_title.setText("Block3");
-        tv_add.setText("前去ViewPager测试页面");
-        tv_notice.setText("ViewPagerTestActivity");
+        tv_title.setText("BlockPager"+page);
+        tv_add.setText("ViewPager测试页面");
+        tv_notice.setText("");
     }
 
     @Override
     public void initListener() {
-        tv_notice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().startActivity(new Intent(context,ViewPagerTestActivity.class));
-            }
-        });
+
     }
 
     @Override
