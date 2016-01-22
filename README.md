@@ -402,7 +402,7 @@ public class CutImgHelper extends CanBlock {
 }
 ```
 **3. viewpager的另一种实现**  
-功能尚不完全，尚需调整，慎用。
+其中使用了[CanRecyclerView](https://github.com/canyinghao/CanRecyclerView)，使用方式请自行查阅。功能尚不完全，尚需调整，慎用。
 ```JAVA
 public class ViewPagerTestActivity extends CanBlockActivity {
     CanRecyclerViewPager viewPager;
