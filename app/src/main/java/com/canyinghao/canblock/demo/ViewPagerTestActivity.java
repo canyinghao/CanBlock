@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.canyinghao.canblock.CanBlockActivity;
 import com.canyinghao.canblock.CanBlockManager;
 import com.canyinghao.canblock.CanBlockPagerAdapter;
+import com.canyinghao.canrecyclerview.CanRecyclerViewPager;
 
 /**
  * Created by yangjian on 15/12/21.
