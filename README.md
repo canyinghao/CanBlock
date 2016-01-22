@@ -6,6 +6,10 @@
 
 ![](./pic/CanBlock.gif)  
 
+##添加依赖
+```JAVA
+compile 'com.canyinghao:canblock:1.0.1'
+```
 
 ## 使用方式 
 **1. 复杂布局分块显示**  
