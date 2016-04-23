@@ -99,6 +99,8 @@ public class CanBlockActivity extends AppCompatActivity {
             if (!mCanBlockManager.onBackPressed()) {
                 super.onBackPressed();
             }
+        }else{
+            super.onBackPressed();
         }
     }
 
