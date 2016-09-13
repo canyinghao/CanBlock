@@ -17,12 +17,12 @@ import android.view.ViewGroup;
 public abstract class CanBlock implements CanBlockLife {
 
     protected View mContentView;
-    protected Context context;
+    protected Context mContext;
     protected boolean isSet;
 
 
     public void init(Context context) {
-        this.context = context;
+        this.mContext = context;
         onCreate();
 
 
@@ -41,7 +41,7 @@ public abstract class CanBlock implements CanBlockLife {
         }
 
 
-        context = null;
+        mContext = null;
         mContentView = null;
 
     }
@@ -102,7 +102,7 @@ public abstract class CanBlock implements CanBlockLife {
      */
     public void setToView(View v) {
         this.isSet = true;
-        this.context = v.getContext();
+        this.mContext = v.getContext();
         this.mContentView = v;
         onCreate();
 
@@ -115,7 +115,7 @@ public abstract class CanBlock implements CanBlockLife {
      * @param vg
      */
     public void addToActivity(@NonNull ViewGroup vg) {
-        this.context = vg.getContext();
+        this.mContext = vg.getContext();
         onCreate();
 
         vg.addView(mContentView);
@@ -129,7 +129,7 @@ public abstract class CanBlock implements CanBlockLife {
      * @param view
      */
     public void replaceToActivity(@NonNull View view) {
-        this.context = view.getContext();
+        this.mContext = view.getContext();
         onCreate();
 
 
@@ -159,7 +159,7 @@ public abstract class CanBlock implements CanBlockLife {
     public abstract void initData();
 
     public void setContentView(@LayoutRes int layoutResID) {
-        setContentView(LayoutInflater.from(context).inflate(layoutResID, null));
+        setContentView(LayoutInflater.from(mContext).inflate(layoutResID, null));
     }
 
     public void setContentView(@NonNull View view) {
@@ -180,9 +180,9 @@ public abstract class CanBlock implements CanBlockLife {
 
     public Activity getActivity() {
 
-        if (context != null && context instanceof Activity) {
+        if (mContext != null && mContext instanceof Activity) {
 
-            return (Activity) context;
+            return (Activity) mContext;
 
         }
 
@@ -191,9 +191,9 @@ public abstract class CanBlock implements CanBlockLife {
 
     public CanBlockActivity getCanBlockActivity() {
 
-        if (context != null && context instanceof CanBlockActivity) {
+        if (mContext != null && mContext instanceof CanBlockActivity) {
 
-            return (CanBlockActivity) context;
+            return (CanBlockActivity) mContext;
 
         }
         return null;

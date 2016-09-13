@@ -2,7 +2,6 @@ package com.canyinghao.canblock.demo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -45,7 +44,7 @@ public class CutImgHelper extends CanBlock {
 
     @Override
     public void initView() {
-        View v = new View(context);
+        View v = new View(mContext);
         setContentView(v);
 
         v.setVisibility(View.GONE);
@@ -128,7 +127,7 @@ public class CutImgHelper extends CanBlock {
             }
         };
 
-        new AlertDialog.Builder(context).setItems(items, click).show()
+        new AlertDialog.Builder(mContext).setItems(items, click).show()
                 .setCanceledOnTouchOutside(true);
     }
 
@@ -160,7 +159,7 @@ public class CutImgHelper extends CanBlock {
                         try {
                             Uri selectedImage = data.getData();
                             String[] filePathColumns = {MediaStore.Images.Media.DATA};
-                            Cursor c = context.getContentResolver().query(selectedImage, filePathColumns, null, null, null);
+                            Cursor c = mContext.getContentResolver().query(selectedImage, filePathColumns, null, null, null);
                             c.moveToFirst();
                             int columnIndex = c.getColumnIndex(filePathColumns[0]);
                             String picturePath = c.getString(columnIndex);
@@ -210,7 +209,7 @@ public class CutImgHelper extends CanBlock {
 //				intent.putExtra(Constants.bean,saveFile.getAbsolutePath());
 //				intent.putExtra(Constants.CUT_IMAGE_FROM_ID,fromid);
 //				CanBus.getDefault().post(intent, CanBus.CANBUS_CROP_RESULT);
-//				Toast.makeText(context, "save", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(mContext, "save", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -244,8 +243,8 @@ public class CutImgHelper extends CanBlock {
 
 
     public DisplayMetrics getScreenDisplayMetrics() {
-        WindowManager manager = (WindowManager) context
-                .getSystemService(Context.WINDOW_SERVICE);
+        WindowManager manager = (WindowManager) mContext
+                .getSystemService(mContext.WINDOW_SERVICE);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         Display display = manager.getDefaultDisplay();

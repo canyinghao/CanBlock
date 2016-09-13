@@ -33,7 +33,7 @@ public class Block3 extends CanBlock {
         tv_notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().startActivity(new Intent(context,ViewPagerTestActivity.class));
+                getActivity().startActivity(new Intent(mContext,ViewPagerTestActivity.class));
             }
         });
     }
